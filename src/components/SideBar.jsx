@@ -1,22 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useHistory } from 'react-router'
 import clsx from 'clsx'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
-import Drawer from '@material-ui/core/Drawer'
-import CssBaseline from '@material-ui/core/CssBaseline'
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import List from '@material-ui/core/List'
-import Divider from '@material-ui/core/Divider'
-import IconButton from '@material-ui/core/IconButton'
+import {
+  Drawer,
+  CssBaseline,
+  AppBar,
+  Toolbar,
+  List,
+  Typography,
+  Divider,
+  IconButton,
+  ListItem,
+  ListItemIcon,
+  ListItemText
+} from '@material-ui/core'
+
 import MenuIcon from '@material-ui/icons/Menu'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemIcon from '@material-ui/core/ListItemIcon'
-import ListItemText from '@material-ui/core/ListItemText'
-import InboxIcon from '@material-ui/icons/MoveToInbox'
-import MailIcon from '@material-ui/icons/Mail'
-import logo from './../assets/image/logo_header.png'
+import { Dashboard, Mail } from '@material-ui/icons'
+import App from './../App.js'
 
 const drawerWidth = 240
 
@@ -77,10 +81,28 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-export default function PersistentDrawerLeft () {
+export default function SideBar () {
   const classes = useStyles()
   const theme = useTheme()
   const [open, setOpen] = React.useState(false)
+
+  const [menuList] = useState([
+    {
+      title: 'Dashboard',
+      link: '/',
+      icon: <Dashboard />
+    },
+    {
+      title: 'Demo',
+      link: '/demo',
+      icon: <Mail />
+    }
+  ])
+
+  const history = useHistory()
+  const changeRouter = (router) => {
+    history.push(router)
+  }
 
   const handleDrawerOpen = () => {
     setOpen(true)
@@ -94,28 +116,30 @@ export default function PersistentDrawerLeft () {
     <div className={classes.root}>
       <CssBaseline />
       <AppBar
-        position="fixed"
+        position='fixed'
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open
         })}
       >
         <Toolbar>
           <IconButton
-            color="inherit"
-            aria-label="open drawer"
+            color='inherit'
+            aria-label='open drawer'
             onClick={handleDrawerOpen}
-            edge="start"
+            edge='start'
             className={clsx(classes.menuButton, open && classes.hide)}
           >
             <MenuIcon />
           </IconButton>
-          <img src={logo} alt="" />
+          <Typography variant='h6' noWrap>
+            Persistent drawer
+          </Typography>
         </Toolbar>
       </AppBar>
       <Drawer
         className={classes.drawer}
-        variant="persistent"
-        anchor="left"
+        variant='persistent'
+        anchor='left'
         open={open}
         classes={{
           paper: classes.drawerPaper
@@ -134,27 +158,23 @@ export default function PersistentDrawerLeft () {
         </div>
         <Divider />
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
+          {menuList.map((choose, i) => (
+            <ListItem button key={i} onClick={() => changeRouter(choose.link)}>
+              <ListItemIcon>{choose.icon}</ListItemIcon>
+              <ListItemText primary={choose.title} />
             </ListItem>
           ))}
         </List>
         <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
       </Drawer>
+      <main
+        className={clsx(classes.content, {
+          [classes.contentShift]: open
+        })}
+      >
+        <div className={classes.drawerHeader} />
+        <App />
+      </main>
     </div>
   )
 }
