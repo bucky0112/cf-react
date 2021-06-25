@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Menu } from 'antd'
+import Icon from '@mdi/react'
+import { mdiAccount } from '@mdi/js'
 // import {
 //   MailOutlined,
 //   SettingOutlined
@@ -16,7 +18,17 @@ export default function HeadBar () {
     {
       title: 'Dashboard',
       link: '/',
-      icon: <span className="material-icons-outlined"></span>
+      icon: (
+        <Icon
+          path={mdiAccount}
+          size={1}
+          horizontal
+          vertical
+          rotate={90}
+          color='red'
+          spin
+        />
+      )
     },
     {
       title: '人力現況分析',
