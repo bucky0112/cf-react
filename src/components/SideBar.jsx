@@ -12,7 +12,8 @@ import {
   IconButton,
   ListItem,
   ListItemIcon,
-  ListItemText
+  ListItemText,
+  Container
 } from '@material-ui/core'
 
 import MenuIcon from '@material-ui/icons/Menu'
@@ -185,14 +186,16 @@ export default function SideBar () {
         </List>
         <Divider />
       </Drawer>
-      <main
-        className={clsx(classes.content, {
-          [classes.contentShift]: open
-        })}
-      >
-        <div className={classes.drawerHeader} />
-        <App />
-      </main>
+      <Container maxWidth="xl">
+        <main
+          className={clsx(classes.content, {
+            [classes.contentShift]: open
+          })}
+        >
+          <div className={classes.drawerHeader} />
+          <App />
+        </main>
+      </Container>
     </div>
   )
 }
