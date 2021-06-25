@@ -1,17 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import reportWebVitals from './reportWebVitals'
-import '@fontsource/roboto'
-// import './index.css'
-// import App from './App'
-import SideBar from './components/SideBar'
+import './index.css'
+import App from './App'
 import { BrowserRouter as Router, Switch } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import 'antd/dist/antd.css'
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
+      <Navbar />
       <Switch>
-        <SideBar />
+        <App />
       </Switch>
     </Router>
   </React.StrictMode>,
