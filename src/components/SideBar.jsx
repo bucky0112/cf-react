@@ -8,7 +8,6 @@ import {
   AppBar,
   Toolbar,
   List,
-  Typography,
   Divider,
   IconButton,
   ListItem,
@@ -19,7 +18,14 @@ import {
 import MenuIcon from '@material-ui/icons/Menu'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
-import { Dashboard, Mail } from '@material-ui/icons'
+import {
+  Dashboard,
+  LocalShipping,
+  InsertChart,
+  TrendingUp
+} from '@material-ui/icons'
+import { deepOrange } from '@material-ui/core/colors'
+import logo from './../assets/image/logo_header.png'
 import App from './../App.js'
 
 const drawerWidth = 240
@@ -78,6 +84,10 @@ const useStyles = makeStyles((theme) => ({
       duration: theme.transitions.duration.enteringScreen
     }),
     marginLeft: 0
+  },
+  orange: {
+    color: theme.palette.getContrastText(deepOrange[500]),
+    backgroundColor: deepOrange[500]
   }
 }))
 
@@ -93,9 +103,19 @@ export default function SideBar () {
       icon: <Dashboard />
     },
     {
-      title: 'Demo',
-      link: '/demo',
-      icon: <Mail />
+      title: 'UPS 監控',
+      link: '/ups',
+      icon: <LocalShipping />
+    },
+    {
+      title: '人力現況分析',
+      link: '/hr',
+      icon: <InsertChart />
+    },
+    {
+      title: '匯率看板',
+      link: '/exchange',
+      icon: <TrendingUp />
     }
   ])
 
@@ -131,9 +151,7 @@ export default function SideBar () {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant='h6' noWrap>
-            Persistent drawer
-          </Typography>
+          <img src={logo} alt=''></img>
         </Toolbar>
       </AppBar>
       <Drawer
