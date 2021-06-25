@@ -16,7 +16,7 @@ export default function HeadBar () {
     {
       title: 'Dashboard',
       link: '/',
-      icon: ''
+      icon: <span className="material-icons-outlined"></span>
     },
     {
       title: '人力現況分析',
@@ -32,6 +32,106 @@ export default function HeadBar () {
       title: '匯率看板',
       link: '/exchange',
       icon: ''
+    },
+    {
+      title: '成機',
+      icon: '',
+      link: '/build-up',
+      children: [
+        {
+          title: '成機看板',
+          icon: '',
+          link: '/build-up/board'
+        }
+      ]
+    },
+    {
+      title: '物流',
+      icon: '',
+      link: '/logistic',
+      children: [
+        {
+          title: '撿料狀態',
+          icon: '',
+          link: '/logistic/status'
+        },
+        {
+          title: '物流明細',
+          icon: '',
+          link: '/logistic/details'
+        },
+        {
+          title: '缺料看板',
+          icon: '',
+          link: '/logistic/short'
+        }
+      ]
+    },
+    {
+      title: '機械稼動狀態',
+      icon: '',
+      link: '/operation',
+      children: [
+        {
+          title: '本廠',
+          icon: '',
+          link: '/operation/local'
+        },
+        {
+          title: '彰濱廠',
+          icon: '',
+          link: '/operation/chang-bin'
+        }
+      ]
+    },
+    {
+      title: '空壓機監控',
+      icon: '',
+      link: '/compressor',
+      children: [
+        {
+          title: 'API624927',
+          icon: '',
+          link: '/compressor/API624927'
+        },
+        {
+          title: 'API670934',
+          icon: '',
+          link: '/compressor/API670934'
+        },
+        {
+          title: 'API670935',
+          icon: '',
+          link: '/compressor/API670935'
+        }
+      ]
+    },
+    {
+      title: '原物料價格',
+      icon: '',
+      link: '/price',
+      children: [
+        {
+          title: '煉油價格',
+          icon: '',
+          link: '/price/petrol'
+        },
+        {
+          title: '板鋼價格',
+          icon: '',
+          link: '/price/steel'
+        },
+        {
+          title: '銅價格',
+          icon: '',
+          link: '/price/copper'
+        },
+        {
+          title: '航運價格',
+          icon: '',
+          link: '/price/shipping'
+        }
+      ]
     }
   ])
 
@@ -40,8 +140,8 @@ export default function HeadBar () {
     setCurrent({ current: e.key })
   }
 
-  const getMenu = () => {
-    return menuList.map((item) => {
+  const getMenu = (list) => {
+    return list.map((item) => {
       if (!item.children) {
         return (
           <Menu.Item key={item.link} icon={item.icon}>
@@ -50,8 +150,8 @@ export default function HeadBar () {
         )
       } else {
         return (
-          <SubMenu key={item.key} icon={item.icon} title={item.title}>
-            {this.getMenu(item.children)}
+          <SubMenu key={item.link} icon={item.icon} title={item.title}>
+            {getMenu(item.children)}
           </SubMenu>
         )
       }
@@ -64,7 +164,8 @@ export default function HeadBar () {
         <img src={logo} alt='logo'></img>
       </Menu.Item>
 
-      {getMenu()}
+      {getMenu(menuList)}
+
     </Menu>
   )
 }
