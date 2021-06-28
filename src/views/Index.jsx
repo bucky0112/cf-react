@@ -1,10 +1,9 @@
 import React from 'react'
-// import logo from './../logo.svg'
+// import PieChart from './../components/Chart/PieChart/PieChart'
 
 function Index () {
   return (
-    <div className='App'>
-      <h1>This is Index</h1>
+    <div id='container'>
     </div>
   )
 }
