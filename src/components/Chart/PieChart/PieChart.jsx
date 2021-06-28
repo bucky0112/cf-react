@@ -9,11 +9,10 @@ import {
   getTheme
 } from 'bizcharts'
 
-const PieChart = () => {
-  const data = [
-    { item: '稼動', count: 44, percent: 0.44 },
-    { item: '非稼動', count: 56, percent: 0.56 }
-  ]
+const PieChart = (props) => {
+  const { chartData } = props
+
+  const data = chartData
 
   const cols = {
     percent: {
@@ -25,7 +24,7 @@ const PieChart = () => {
   }
 
   return (
-    <Chart height={400} data={data} scale={cols} autoFit>
+    <Chart height={400} data={data} scale={cols} autoFit={true}>
       <Coordinate type='theta' radius={0.75} />
       <Tooltip showTitle={false} />
       <Axis visible={false} />

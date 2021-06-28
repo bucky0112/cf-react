@@ -7,14 +7,15 @@ import BuildUp from './views/BuildUp/BuildUp'
 import { Route } from 'react-router-dom'
 import './index.css'
 import { Layout, Breadcrumb } from 'antd'
+import styled from '@emotion/styled'
 
 const { Content, Footer } = Layout
 
-const contentStyle = {
-  minHeight: '280px',
-  padding: 24,
-  background: '#fff'
-}
+const MainContent = styled.div`
+  min-height: 280px;
+  padding: 24px;
+  background: #fff
+`
 
 export default function App () {
   return (
@@ -24,13 +25,13 @@ export default function App () {
           <Breadcrumb.Item>Home</Breadcrumb.Item>
           <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
         </Breadcrumb>
-        <div className='site-layout-content' style={contentStyle}>
+        <MainContent>
           <Route path='/' exact component={Index} />
           <Route path='/ups' component={Ups} />
           <Route path='/hr' component={Hr} />
           <Route path='/exchange' component={ExChange} />
           <Route path='/build-up/board' component={BuildUp} />
-        </div>
+        </MainContent>
       </Content>
       <Footer style={{ textAlign: 'center' }}>
         金豐機器工業股份有限公司 ©2021 Created by 資訊課
