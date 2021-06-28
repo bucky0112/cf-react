@@ -148,7 +148,7 @@ export default function HeadBar () {
   ])
 
   const handleClick = (e) => {
-    console.log('click ', e)
+    // console.log('click ', e)
     setCurrent({ current: e.key })
   }
 
@@ -171,7 +171,12 @@ export default function HeadBar () {
   }
 
   return (
-    <Menu onClick={handleClick} selectedKeys={[current]} mode='horizontal'>
+    <Menu
+      theme='dark'
+      onClick={handleClick}
+      selectedKeys={[current]}
+      mode='horizontal'
+    >
       <Menu.Item key='logo'>
         <img src={logo} alt='logo'></img>
       </Menu.Item>
