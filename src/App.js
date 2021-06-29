@@ -13,10 +13,9 @@ const { Content, Footer } = Layout
 
 const MainContent = styled.div`
   min-height: 280px;
-  padding: 24px;
-  background: #fff
+  padding: 18px;
+  background: rgba(43, 142, 218, 0.53)
 `
-
 export default function App () {
   return (
     <>

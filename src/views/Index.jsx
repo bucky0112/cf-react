@@ -4,6 +4,7 @@ import PieChart from './../components/Chart/PieChart/PieChart'
 import AxisChart from '../components/Chart/AxisChart/AxisChart'
 import BarChart from '../components/Chart/BarChart/BarChart'
 import LiveWork from './../components/Live/Live'
+import WorkInfo from './../components/Table/WorkInfo'
 
 function Index () {
   // 單月稼動率
@@ -148,19 +149,42 @@ function Index () {
     }
   ])
 
+  // 工單資訊
+  const [workInfoData] = useState([
+    { title: '機台號碼', content: '115' },
+    { title: '機台狀態', content: '稼動中' },
+    { title: '工單號碼', content: '6420' },
+    { title: '需求工時', content: '51.00 HR' },
+    { title: '完成工時', content: '5.40 HR' },
+    { title: '完成度', content: '11%' },
+    { title: '開始時間', content: '2021/6/28 下午 01:00:00' },
+    { title: '作業員', content: 'XXX' }
+  ])
+
+  // 匯入元件
   const [chartCard] = useState([
     {
       id: 1,
+      title: '機台運作情況',
+      component: <LiveWork />
+    },
+    {
+      id: 2,
+      title: '工單資訊',
+      component: <WorkInfo data={workInfoData} />
+    },
+    {
+      id: 3,
       title: '2021 年 6 月 - 稼動率',
       component: <PieChart chartData={monthActivation} />
     },
     {
-      id: 2,
+      id: 4,
       title: '過去 1 小時稼動電流值',
       component: <AxisChart chartData={electric} />
     },
     {
-      id: 3,
+      id: 5,
       title: '2021 年 6 月 - 每日稼動率',
       component: <BarChart chartData={dayActivation} />
     }
@@ -168,13 +192,10 @@ function Index () {
 
   return (
     <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-      <Col xs={32} sm={24} md={12} lg={12} xl={8} xxl={8}>
-        <LiveWork />
-      </Col>
       {chartCard.map((item) => {
         return (
           <Col key={item.id} xs={32} sm={24} md={12} lg={12} xl={8} xxl={8}>
-            <Card title={item.title} hoverable={true}>
+            <Card title={item.title} hoverable={true} style={{ marginBottom: 10, height: 510 }}>
               {item.component}
             </Card>
           </Col>
