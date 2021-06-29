@@ -12,7 +12,22 @@ function BarChart (props) {
       interactions={['active-region']}
       padding={[30, 30, 30, 50]}
     >
-      <Interval position='day*activation' />
+      <Interval
+        position='x*num'
+        label={[
+          'num',
+          (val) => {
+            return {
+              content: val,
+              style: {
+                fill: '#0df2c9',
+                fontSize: 18,
+                fontWeight: 'bold'
+              }
+            }
+          }
+        ]}
+      />
       <Tooltip shared />
     </Chart>
   )

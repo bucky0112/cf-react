@@ -15,14 +15,14 @@ function Index () {
 
   // 每日稼動率
   const [dayActivation] = useState([
-    { day: '1', activation: 76 },
-    { day: '2', activation: 67 },
-    { day: '3', activation: 61 },
-    { day: '4', activation: 39 },
-    { day: '5', activation: 50 },
-    { day: '6', activation: 49 },
-    { day: '7', activation: 1 },
-    { day: '8', activation: 79 }
+    { x: '1', num: 76 },
+    { x: '2', num: 67 },
+    { x: '3', num: 61 },
+    { x: '4', num: 39 },
+    { x: '5', num: 50 },
+    { x: '6', num: 49 },
+    { x: '7', num: 1 },
+    { x: '8', num: 79 }
   ])
 
   // 電流值
