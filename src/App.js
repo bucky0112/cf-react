@@ -1,10 +1,14 @@
 import React from 'react'
+import { Route } from 'react-router-dom'
 import Index from './views/Index'
 import Ups from './views/UPS/Ups'
 import Hr from './views/HR/Hr'
 import ExChange from './views/ExChange/ExChange'
 import BuildUp from './views/BuildUp/BuildUp'
-import { Route } from 'react-router-dom'
+import LogisticStatus from './views/Logistic/LogisticStatus'
+import LogisticDetails from './views/Logistic/LogisticDetails'
+import LogisticShort from './views/Logistic/LogisticShort'
+
 import './index.css'
 import { Layout, Breadcrumb } from 'antd'
 import styled from '@emotion/styled'
@@ -30,6 +34,9 @@ export default function App () {
           <Route path='/hr' component={Hr} />
           <Route path='/exchange' component={ExChange} />
           <Route path='/build-up/board' component={BuildUp} />
+          <Route path='/logistic/status' component={LogisticStatus} />
+          <Route path='/logistic/details' component={LogisticDetails} />
+          <Route path='/logistic/short' component={LogisticShort} />
         </MainContent>
       </Content>
       <Footer style={{ textAlign: 'center' }}>
