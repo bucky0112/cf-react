@@ -8,6 +8,8 @@ import BuildUp from './views/BuildUp/BuildUp'
 import LogisticStatus from './views/Logistic/LogisticStatus'
 import LogisticDetails from './views/Logistic/LogisticDetails'
 import LogisticShort from './views/Logistic/LogisticShort'
+import LocalOperation from './views/Operation/Local'
+import ChangBinOperation from './views/Operation/ChangBin'
 
 import './index.css'
 import { Layout, Breadcrumb } from 'antd'
@@ -37,6 +39,8 @@ export default function App () {
           <Route path='/logistic/status' component={LogisticStatus} />
           <Route path='/logistic/details' component={LogisticDetails} />
           <Route path='/logistic/short' component={LogisticShort} />
+          <Route path='/operation/local' component={LocalOperation} />
+          <Route path='/operation/chang-bin' component={ChangBinOperation} />
         </MainContent>
       </Content>
       <Footer style={{ textAlign: 'center' }}>
