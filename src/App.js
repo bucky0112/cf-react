@@ -10,6 +10,7 @@ import LogisticDetails from './views/Logistic/LogisticDetails'
 import LogisticShort from './views/Logistic/LogisticShort'
 import LocalOperation from './views/Operation/Local'
 import ChangBinOperation from './views/Operation/ChangBin'
+import OperationDetail from './views/Operation/OperationDetail'
 
 import './index.css'
 import { Layout, Breadcrumb } from 'antd'
@@ -41,6 +42,7 @@ export default function App () {
           <Route path='/logistic/short' component={LogisticShort} />
           <Route path='/operation/local' component={LocalOperation} />
           <Route path='/operation/chang-bin' component={ChangBinOperation} />
+          <Route path='/operation/detail' component={OperationDetail} />
         </MainContent>
       </Content>
       <Footer style={{ textAlign: 'center' }}>

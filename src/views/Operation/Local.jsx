@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Row, Col, Space, Select } from 'antd'
 import LiquidChart from '../../components/Chart/LiquidChart/LiquidChart'
 import styled from '@emotion/styled'
+import { useHistory } from 'react-router-dom'
 
 const Title = styled.h2`
   font-size: 26px;
@@ -9,10 +10,12 @@ const Title = styled.h2`
   display: flex;
   justify-content: center;
 `
+const SelectAndColor = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
 const ColorInfo = styled.ul`
   list-style-type: none;
-  display: flex;
-  justify-content: flex-end;
 `
 const GreenColor = styled.li`
   border-style: solid;
@@ -102,36 +105,41 @@ const LocalOperation = () => {
     }
   ])
 
-  // const [options] = useState([
-  //   { title: '115' },
-  //   { title: '116' },
-  //   { title: '117' },
-  //   { title: '120' }
-  // ])
+  const history = useHistory()
+  const handleToDetail = () => {
+    history.push('/operation/detail')
+  }
 
   const handleSelect = (e) => {
     console.log(e)
+    handleToDetail()
   }
 
   return (
     <>
-      <Select defaultValue='115' style={{ width: 150 }} onChange={handleSelect}>
-        {stationData.map((option) => {
-          return (
-            <Option key={option.station} value={option.station}>
-              {option.station}
-            </Option>
-          )
-        })}
-      </Select>
       <Title>本廠機臺稼動狀況 - 6 月份</Title>
-      <ColorInfo>
-        <Space>
-          <GreenColor>稼動率 &#62; 50%</GreenColor>
-          <YellowColor>稼動率介於 30% ~ 50%</YellowColor>
-          <RedColor>稼動率 &#60; 30%</RedColor>
-        </Space>
-      </ColorInfo>
+      <SelectAndColor>
+        <Select
+          placeholder='請選擇機臺'
+          style={{ width: 150 }}
+          onChange={handleSelect}
+        >
+          {stationData.map((option) => {
+            return (
+              <Option key={option.station} value={option.station}>
+                {option.station}
+              </Option>
+            )
+          })}
+        </Select>
+        <ColorInfo>
+          <Space>
+            <GreenColor>稼動率 &#62; 50%</GreenColor>
+            <YellowColor>稼動率介於 30% ~ 50%</YellowColor>
+            <RedColor>稼動率 &#60; 30%</RedColor>
+          </Space>
+        </ColorInfo>
+      </SelectAndColor>
       <Row>
         <Space size={[40, 40]} wrap>
           {stationData.map((item) => {
