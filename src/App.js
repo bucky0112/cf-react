@@ -1,5 +1,7 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
+import { Layout, Breadcrumb } from 'antd'
+import styled from '@emotion/styled'
 import Index from './views/Index'
 import Ups from './views/UPS/Ups'
 import Hr from './views/HR/Hr'
@@ -11,10 +13,11 @@ import LogisticShort from './views/Logistic/LogisticShort'
 import LocalOperation from './views/Operation/Local'
 import ChangBinOperation from './views/Operation/ChangBin'
 import OperationDetail from './views/Operation/OperationDetail'
-
-import './index.css'
-import { Layout, Breadcrumb } from 'antd'
-import styled from '@emotion/styled'
+import Compressor from './views/Compressor/Compressor'
+import Petrol from './views/Price/Petrol'
+import Steel from './views/Price/Steel'
+import Copper from './views/Price/Copper'
+import Shipping from './views/Price/Shipping'
 
 const { Content, Footer } = Layout
 
@@ -43,6 +46,11 @@ export default function App () {
           <Route path='/operation/local' component={LocalOperation} />
           <Route path='/operation/chang-bin' component={ChangBinOperation} />
           <Route path='/operation/detail' component={OperationDetail} />
+          <Route path='/compressor' component={Compressor} />
+          <Route path='/price/Petrol' component={Petrol} />
+          <Route path='/price/Steel' component={Steel} />
+          <Route path='/price/Copper' component={Copper} />
+          <Route path='/price/Shipping' component={Shipping} />
         </MainContent>
       </Content>
       <Footer style={{ textAlign: 'center' }}>
