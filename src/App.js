@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-import { Layout, Breadcrumb } from 'antd'
+import { Layout } from 'antd'
 import styled from '@emotion/styled'
 import Index from './views/Index'
 import Ups from './views/UPS/Ups'
@@ -13,7 +13,9 @@ import LogisticShort from './views/Logistic/LogisticShort'
 import LocalOperation from './views/Operation/Local'
 import ChangBinOperation from './views/Operation/ChangBin'
 import OperationDetail from './views/Operation/OperationDetail'
-import Compressor from './views/Compressor/Compressor'
+import CompressorAPI624927 from './views/Compressor/CompressorAPI624927'
+import CompressorAPI670934 from './views/Compressor/CompressorAPI670934'
+import CompressorAPI670935 from './views/Compressor/CompressorAPI670935'
 import Petrol from './views/Price/Petrol'
 import Steel from './views/Price/Steel'
 import Copper from './views/Price/Copper'
@@ -29,11 +31,11 @@ const MainContent = styled.div`
 export default function App () {
   return (
     <>
-      <Content style={{ padding: '0 50px' }}>
-        <Breadcrumb style={{ margin: '10px 0' }}>
+      <Content style={{ padding: '30' }}>
+        {/* <Breadcrumb style={{ margin: '10px 0' }}>
           <Breadcrumb.Item>Home</Breadcrumb.Item>
           <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
-        </Breadcrumb>
+        </Breadcrumb> */}
         <MainContent>
           <Route path='/' exact component={Index} />
           <Route path='/ups' component={Ups} />
@@ -46,7 +48,9 @@ export default function App () {
           <Route path='/operation/local' component={LocalOperation} />
           <Route path='/operation/chang-bin' component={ChangBinOperation} />
           <Route path='/operation/detail' component={OperationDetail} />
-          <Route path='/compressor' component={Compressor} />
+          <Route path='/compressor/API624927' component={CompressorAPI624927} />
+          <Route path='/compressor/API670934' component={CompressorAPI670934} />
+          <Route path='/compressor/API670935' component={CompressorAPI670935} />
           <Route path='/price/Petrol' component={Petrol} />
           <Route path='/price/Steel' component={Steel} />
           <Route path='/price/Copper' component={Copper} />
