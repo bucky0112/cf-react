@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/cf-react/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/cf-react/static/js/main.0ebc3246.chunk.js",
-    "main.js.map": "/cf-react/static/js/main.0ebc3246.chunk.js.map",
-    "runtime-main.js": "/cf-react/static/js/runtime-main.988559d5.js",
-    "runtime-main.js.map": "/cf-react/static/js/runtime-main.988559d5.js.map",
-    "static/css/2.5017cc9a.chunk.css": "/cf-react/static/css/2.5017cc9a.chunk.css",
-    "static/js/2.ef9f2f61.chunk.js": "/cf-react/static/js/2.ef9f2f61.chunk.js",
-    "static/js/2.ef9f2f61.chunk.js.map": "/cf-react/static/js/2.ef9f2f61.chunk.js.map",
-    "static/js/3.03c9a201.chunk.js": "/cf-react/static/js/3.03c9a201.chunk.js",
-    "static/js/3.03c9a201.chunk.js.map": "/cf-react/static/js/3.03c9a201.chunk.js.map",
-    "index.html": "/cf-react/index.html",
-    "static/css/2.5017cc9a.chunk.css.map": "/cf-react/static/css/2.5017cc9a.chunk.css.map",
-    "static/css/main.6dea0f05.chunk.css.map": "/cf-react/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.ef9f2f61.chunk.js.LICENSE.txt": "/cf-react/static/js/2.ef9f2f61.chunk.js.LICENSE.txt",
-    "static/media/live.d8f41690.jpg": "/cf-react/static/media/live.d8f41690.jpg",
-    "static/media/logo_header.dd870ea7.png": "/cf-react/static/media/logo_header.dd870ea7.png"
+    "main.css": "/cf-kanban/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/cf-kanban/static/js/main.66d38322.chunk.js",
+    "main.js.map": "/cf-kanban/static/js/main.66d38322.chunk.js.map",
+    "runtime-main.js": "/cf-kanban/static/js/runtime-main.13dcf1fa.js",
+    "runtime-main.js.map": "/cf-kanban/static/js/runtime-main.13dcf1fa.js.map",
+    "static/css/2.5017cc9a.chunk.css": "/cf-kanban/static/css/2.5017cc9a.chunk.css",
+    "static/js/2.ef9f2f61.chunk.js": "/cf-kanban/static/js/2.ef9f2f61.chunk.js",
+    "static/js/2.ef9f2f61.chunk.js.map": "/cf-kanban/static/js/2.ef9f2f61.chunk.js.map",
+    "static/js/3.03c9a201.chunk.js": "/cf-kanban/static/js/3.03c9a201.chunk.js",
+    "static/js/3.03c9a201.chunk.js.map": "/cf-kanban/static/js/3.03c9a201.chunk.js.map",
+    "index.html": "/cf-kanban/index.html",
+    "static/css/2.5017cc9a.chunk.css.map": "/cf-kanban/static/css/2.5017cc9a.chunk.css.map",
+    "static/css/main.6dea0f05.chunk.css.map": "/cf-kanban/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.ef9f2f61.chunk.js.LICENSE.txt": "/cf-kanban/static/js/2.ef9f2f61.chunk.js.LICENSE.txt",
+    "static/media/live.d8f41690.jpg": "/cf-kanban/static/media/live.d8f41690.jpg",
+    "static/media/logo_header.dd870ea7.png": "/cf-kanban/static/media/logo_header.dd870ea7.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.988559d5.js",
+    "static/js/runtime-main.13dcf1fa.js",
     "static/css/2.5017cc9a.chunk.css",
     "static/js/2.ef9f2f61.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.0ebc3246.chunk.js"
+    "static/js/main.66d38322.chunk.js"
   ]
 }
